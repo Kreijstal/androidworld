@@ -1,0 +1,29 @@
+name: Build APK
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 11
+
+      - run: make
+
+      - run: java -cp build/apksigner.jar com.android.apksigner.ApkSignerTool verify --verbose build/app.apk
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: app.apk
+          path: build/app.apk

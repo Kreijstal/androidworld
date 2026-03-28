@@ -1,0 +1,12 @@
+[submodule "vendor/android-platforms"]
+	path = vendor/android-platforms
+	url = https://github.com/Sable/android-platforms.git
+[submodule "vendor/dalvik-dx"]
+	path = vendor/dalvik-dx
+	url = https://github.com/JakeWharton/dalvik-dx.git
+[submodule "vendor/apksig"]
+	path = vendor/apksig
+	url = https://github.com/aosp-mirror-neo/platform_tools_apksig.git
+[submodule "vendor/ARSCLib"]
+	path = vendor/ARSCLib
+	url = https://github.com/REAndroid/ARSCLib.git
